@@ -1,0 +1,33 @@
+{
+  "name": "covid19eus",
+  "version": "1.0.0",
+  "description": "Covid-19ari buruzko EAEko datuak",
+  "author": "@asiermusa",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.9.7",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "apexcharts": "^3.17.1",
+    "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
+    "cookieparser": "^0.1.0",
+    "express": "^4.17.1",
+    "js-cookie": "^2.2.1",
+    "line-reader": "^0.4.0",
+    "nuxt": "^2.12.2",
+    "path": "^0.12.7",
+    "rimraf": "^3.0.2",
+    "vue-apexcharts": "^1.5.2",
+    "vue-number-animation": "^1.0.5"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.0"
+  }
+}
