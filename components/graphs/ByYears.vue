@@ -23,9 +23,6 @@
     },
     data(){
       return{
-        ready: false,
-
-
         series: [{
           name: 'Positiboak',
           data: [],
@@ -106,6 +103,8 @@
     _getData(){
       this.series[0].data = this.graphData.series[0].data.reverse()
       this.series[1].data = this.graphData.series[1].data.reverse()
+      this.series[0].name = this.$t('sections.adinaGraph.positiboak')
+      this.series[1].name = this.$t('sections.adinaGraph.hildakoak')
       this.options.xaxis.categories = this.graphData.options.xaxis.categories.reverse()
     }
   }

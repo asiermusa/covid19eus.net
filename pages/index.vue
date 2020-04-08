@@ -16,14 +16,14 @@
           color="transparent">
 
           <!-- ANALISIAK -->
-          <v-card-title class="card-title justify-center my-3">Analisiak Guztira</v-card-title>
+          <v-card-title class="card-title justify-center my-3">{{ $t('headers.analisiak') }}</v-card-title>
           <v-card-subtitle class="card-maindata justify-center" v-if="analisis">
             <difference :data1="analisis.total.totalCountEuskadi" :data2="totalRegion[0].totalCountEuskadi" type="positiboak"></difference>
           </v-card-subtitle>
           <!-- ANALISIAK -->
 
           <!-- HILDAKOAK -->
-          <v-card-title class="card-title justify-center my-3">Horietatik positiboak</v-card-title>
+          <v-card-title class="card-title justify-center my-3">{{ $t('headers.positiboak') }}</v-card-title>
           <v-card-subtitle class="card-maindata justify-center" v-if="hildakoak">
             <difference :data1="hildakoak[0].total.positiveTotalCount" :data2="hildakoak[1].total.positiveTotalCount"></difference>
           </v-card-subtitle>
@@ -40,24 +40,24 @@
           color="transparent">
 
           <!-- OSPITALERATUAK -->
-          <v-card-title class="card-title justify-center my-3">Ospitaleratuak</v-card-title>
+          <v-card-title class="card-title justify-center my-3">{{ $t('headers.ospitaleratuak') }}</v-card-title>
           <v-card-subtitle class="card-maindata justify-center" v-if="ospitaleratuak">
             <difference :data1="ospitaleratuakCount[0].total.totalPeopleCount" :data2="ospitaleratuakCount[1].total.totalPeopleCount"></difference>
 
-            <p>(Guztietatik
+            <p>({{ $t('headers.uci.guztietatik') }}
               <strong>
               <number
               v-if="ospitaleratuakCount"
               :to="ospitaleratuakCount[0].total.icuPeopleCount"
               :duration="3"
               easing="Power1.easeOut"/>
-            </strong> UCIan daude)</p>
+            </strong> {{ $t('headers.uci.ucian') }})</p>
 
           </v-card-subtitle>
           <!-- OSPITALERATUAK -->
 
           <!-- ALTAN -->
-          <v-card-title class="card-title justify-center my-3">Altan emandakoak</v-card-title>
+          <v-card-title class="card-title justify-center my-3">{{ $t('headers.altan') }}</v-card-title>
           <v-card-subtitle class="card-maindata justify-center" v-if="ospitaleratuak">
             <difference :data1="altakCount" :data2="altakCountDiff + ospitaleratuakCount[1].total.releasedPeopleCount" type="alta" inverse="true"></difference>
           </v-card-subtitle>
@@ -81,7 +81,7 @@
               text-color="white"
               large>
 
-              HILDAKOAK
+              {{ $t('headers.hildakoak') }}
               <span style="margin-left: 10px;">
                 <number
                   ref="number2"
@@ -97,7 +97,7 @@
           <!-- HILDAKOAK -->
 
           <!-- HERIOTZA TASA -->
-          <v-card-title class="card-title justify-center my-3">HERIOTZA TASA %</v-card-title>
+          <v-card-title class="card-title justify-center my-3">{{ $t('headers.heriotzaTasa') }} %</v-card-title>
           <v-card-subtitle class="card-maindata justify-center" v-if="hildakoak">
             <difference :data1="hildakoak[0].total.totalLethalityRate" :data2="hildakoak[1].total.totalLethalityRate" type="tasa"></difference>
           </v-card-subtitle>
@@ -124,9 +124,8 @@
           elevation='0'
           color="transparent"
           class="header mt-10">
-          <v-card-subtitle class="header-title pa-3">LURRALDEKA</v-card-subtitle>
-          <v-card-subtitle class="header-subtitle pa-0">Lurralde bakoitzean eman diren positiboen bilakaera. Batetik egun bakoitzean
-          eman diren positibo kopurua. Bestetik 10.000 biztanleko gaixo kopuruak egunez-egun izandako bilakaera.</v-card-subtitle>
+          <v-card-subtitle class="header-title pa-3">{{ $t('sections.lurraldeka') }}</v-card-subtitle>
+          <v-card-subtitle class="header-subtitle pa-0">{{ $t('sections.lurraldekaText') }}</v-card-subtitle>
         </v-card>
       </v-col>
 
@@ -150,8 +149,8 @@
           elevation='0'
           color="transparent"
           class="header mt-10">
-          <v-card-subtitle class="header-title pa-3">OSPITALERATUAK</v-card-subtitle>
-          <v-card-subtitle class="header-subtitle pa-0">Ospitaleratuen artean plantan edo UCIan daudenen eboluzioa.</v-card-subtitle>
+          <v-card-subtitle class="header-title pa-3">{{ $t('sections.ospitaleratuak') }}</v-card-subtitle>
+          <v-card-subtitle class="header-subtitle pa-0">{{ $t('sections.ospitaleratuakText') }}</v-card-subtitle>
         </v-card>
 
         <!-- HOSPITAL CHART -->
@@ -179,9 +178,9 @@
           color="transparent"
           class="header mt-10">
 
-          <v-card-subtitle class="header-title pa-3">ADINAREN ARABERA</v-card-subtitle>
-          <v-card-subtitle class="header-subtitle pa-0">Adinaren arabera birusak izan duen bilakera ikusi daiteke grafiko honetan.</v-card-subtitle>
-            <small class="header-notes" style="margin: 15px 0;">{{ hildakoakNotes }}</small>
+          <v-card-subtitle class="header-title pa-3">{{ $t('sections.adinarenArabera') }}</v-card-subtitle>
+          <v-card-subtitle class="header-subtitle pa-0">{{ $t('sections.adinarenAraberaText') }}</v-card-subtitle>
+            <small class="header-notes" style="margin: 15px 0;">{{ $t('sections.hildakoakNotes') }}</small>
           </v-card>
 
           <!-- BY YEARS CHART -->
@@ -205,10 +204,9 @@
             elevation='0'
             color="transparent"
             class="header mt-10">
-            <v-card-subtitle class="header-title pa-3">EGUNEZ-EGUNEKO BILAKAERA</v-card-subtitle>
-            <v-card-subtitle class="header-subtitle pa-0">Egunez-egun EAEn eman diren datuak. Alde batetik positibo eta ospitaleratuak,
-              bestetik, altan eman direnen eta hildakoen arteko bilakera.</v-card-subtitle>
-            <small class="header-notes" style="margin: 15px 0;">{{ herriakNotes }}</small>
+            <v-card-subtitle class="header-title pa-3">{{ $t('sections.egunezEgunekoa') }}</v-card-subtitle>
+            <v-card-subtitle class="header-subtitle pa-0">{{ $t('sections.egunezEgunekoaText') }}</v-card-subtitle>
+            <small class="header-notes" style="margin: 15px 0;">{{ $t('sections.herriakNotes') }}</small>
           </v-card>
         </v-col>
 
@@ -230,12 +228,12 @@
       v-model="snackbar"
       color="primary">
 
-      Datuak eguneratuak daude: {{ lastUpdate }}
+      {{ $t('snackbar.text') }} {{ lastUpdate }}
       <v-btn
         color="secondary"
         light
         @click="snackbar = false">
-        Itxi
+        {{ $t('snackbar.close') }}
       </v-btn>
     </v-snackbar>
 
@@ -259,12 +257,16 @@ export default {
     ByYears,
     AllData
   },
-  head () {
+  head() {
     return {
-      title: 'COVID-19 EUS',
+      title: this.$t('seo.title') + ' | ' +this.$t('seo.desc'),
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: 'description', content: 'Covid-19ari buruzko EAEko datuak' }
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('seo.desc')
+        }
       ]
     }
   },
@@ -275,22 +277,17 @@ export default {
       lastUpdate: false,
       snackbar: false,
       loader: true,
-
       herriak: null,
       ospitaleratuak: null,
       hildakoak: null,
       analisis: null,
       analisisReverse: [],
       herriDatuak: [],
-      probintziak: [],
       ospitaleratuakCount: [],
       altakCount: 0,
       altakCountDiff: 0,
-      herriakNotes: null,
-      hildakoakNotes: null,
       totalRegion: [],
       herriakComputed: [],
-
 
       // Charts
       regions1: {
@@ -568,9 +565,9 @@ export default {
               this.byYears.series[0].data.push(res.positiveTotalCount)
               this.byYears.series[1].data.push(res.deathTotalCount)
               if(j != 9){
-                this.byYears.options.xaxis.categories.push(res.ageRange.slice(0, -5).concat(' urte'))
+                this.byYears.options.xaxis.categories.push(res.ageRange.slice(0, -5).concat(this.$t('sections.adinaGraph.urte')))
               }else{
-                this.byYears.options.xaxis.categories.push(res.ageRange.slice(0, -11).concat(' urte edo gehiago'))
+                this.byYears.options.xaxis.categories.push(res.ageRange.slice(0, -11).concat(this.$t('sections.adinaGraph.urteGehiago')))
               }
             })
           }
@@ -591,17 +588,14 @@ export default {
     async _getData(){
 
       //get all data
-
       var herriak = await this.$axios.$get('https://opendata.euskadi.eus/contenidos/ds_informes_estudios/covid_19_2020/opendata/aggregated/json/udalerriak-municipios.json')
       this.herriak = herriak
-      this.herriakNotes = herriak.notes.BASQUE
 
       var ospitaleratuak = await this.$axios.$get('https://opendata.euskadi.eus/contenidos/ds_informes_estudios/covid_19_2020/opendata/aggregated/json/ospitaleratuak-hospitalizados.json')
       this.ospitaleratuak = ospitaleratuak
 
       var hildakoak = await this.$axios.$get('https://opendata.euskadi.eus/contenidos/ds_informes_estudios/covid_19_2020/opendata/aggregated/json/hildakoak-fallecidos.json')
       this.hildakoak = hildakoak.byDate
-      this.hildakoakNotes = hildakoak.notes.SPANISH
 
       var analisis = await this.$axios.$get('https://opendata.euskadi.eus/contenidos/ds_informes_estudios/covid_19_2020/opendata/aggregated/json/analisiak-analisis.json')
       this.analisis = analisis

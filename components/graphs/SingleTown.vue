@@ -11,13 +11,14 @@
     ],
     created(){
       this.townSeries[0].data = this.graph.townSeries[0].data.reverse()
+      this.townSeries[0].name = this.$t('sections.positiboak')
       this.townChartOptions.xaxis.categories = this.graph.townChartOptions.xaxis.categories.reverse()
     },
     data(){
       return{
         //single town chart
         townSeries: [{
-          name: 'Positiboak',
+          name: '',
           data: [],
         }],
         townChartOptions: {

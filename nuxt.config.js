@@ -6,8 +6,6 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: 'Covid-19ari buruzko EAEko datuak - %s',
-    title: 'Covid-19 EUS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -50,6 +48,32 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    [
+      'nuxt-i18n',
+      {
+        seo: true,
+        locales: [
+          {
+            code: 'eus',
+            name: 'EUS',
+            iso: 'eu',
+            file: 'eus.js',
+          },
+          {
+            code: 'es',
+            name: 'ES',
+            iso: 'es_ES',
+            file: 'es.js',
+          }
+        ],
+        defaultLocale: 'eus',
+        lazy: true,
+        langDir: 'locales/',
+        vueI18n: {
+          fallbackLocale: 'es'
+        }
+      }
+    ]
   ],
   /*
   ** Axios module configuration

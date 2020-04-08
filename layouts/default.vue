@@ -11,13 +11,11 @@
 
       <div>
         <p class="text-left" style="color: #3f3f3f">
-          Aplikazio hau BETA bertsioan dago eta <strong>opendata euskadiko</strong> webguneko datuak jasota egin da.
-          Datu guztiak <strong>martxoaren 19</strong>az geroztik jaso dira.
+          {{ $t('nav.mainText1') }}
         </p>
         <v-divider class="my-4"></v-divider>
         <p class="text-left" style="color: #3f3f3f">
-          Egunero 14:00ak aldera modu automatikoan eguneratuko dira datuak.
-          Falta diren probintziak sartzea izango da hurrengo urratsa.
+          {{ $t('nav.mainText2') }}
         </p>
       </div>
 
@@ -25,7 +23,7 @@
         <div class="py-2" style="color: #ababab;">
           <p class="text-left">
             <v-icon style="font-size: 20px">mdi-github</v-icon>
-            Kodea <a href="#" style="font-weight: bold;">githuben eskuragarri</a>
+            {{ $t('nav.code') }} <a href="https://github.com/asiermusa/covid19eus.net" style="font-weight: bold;">{{ $t('nav.codeLink') }}</a>
           </p>
           <p class="text-left">
             <v-icon style="font-size: 20px">mdi-email</v-icon> asiermusa@gmail.com
@@ -47,6 +45,17 @@
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
+
+      <v-spacer></v-spacer>
+
+      <nuxt-link
+        class="langs"
+        v-for="locale in availableLocales"
+        :key="locale.code"
+        :to="switchLocalePath(locale.code)">
+          <v-btn icon>{{ locale.name }}</v-btn>
+      </nuxt-link>
+
     </v-app-bar>
     <v-content>
 
@@ -85,7 +94,7 @@
         <v-row class="py-0">
           <v-col cols="12" class="py-0">
            <p class="text-center font-weight-light pa-0" style="padding: 0; font-size: 13px">
-             Garapena @asiermusa | Datuak <strong>opendata euskadi</strong>
+              {{ $t('footer.credits') }}
            </p>
         </v-col>
       </v-row>
@@ -105,6 +114,11 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'COVID-19 EUS'
+    }
+  },
+  computed: {
+    availableLocales () {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
     }
   }
 }
@@ -266,5 +280,10 @@ html, body {
 
 .v-footer {
   position: relative !important;
+}
+
+.langs {
+  text-decoration: none;
+  font-size: 16px;
 }
 </style>

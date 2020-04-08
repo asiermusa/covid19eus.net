@@ -8,13 +8,13 @@
 
       <div v-if="!negative">
 
-        <p>Aurreko egunean baino <span>{{parseFloat(diff).toFixed(1)}}%</span> gehiago <v-icon color="error">mdi-menu-up</v-icon></p>
+        <p>{{ $t('headers.difference.aurreko') }} <span>{{parseFloat(diff).toFixed(1)}}%</span> {{ $t('headers.difference.gehiago') }} <v-icon color="error">mdi-menu-up</v-icon></p>
 
       </div>
 
       <div v-else>
 
-        <p>Aurreko egunean baino <span>{{parseFloat(diff).toFixed(1)}}%</span> gutxiago <v-icon color="success">mdi-menu-down</v-icon></p>
+        <p>{{ $t('headers.difference.aurreko') }} <span>{{parseFloat(diff).toFixed(1)}}%</span> {{ $t('headers.difference.gutxiago') }} <v-icon color="success">mdi-menu-down</v-icon></p>
 
       </div>
 
@@ -30,13 +30,13 @@
         :duration="3"
         easing="Power1.easeOut"/>
 
-        <p>Aurreko egunean baino <span>
+        <p>{{ $t('headers.difference.aurreko') }} <span>
           <number
           ref="number2"
           :to="data2"
           :duration="3"
           easing="Power1.easeOut"/>
-        </span> gehiago
+        </span> {{ $t('headers.difference.gehiago') }}
           <v-icon color="success" v-if="inverse">mdi-menu-up</v-icon>
           <v-icon color="error" v-else>mdi-menu-up</v-icon>
         </p>
@@ -55,13 +55,13 @@
 
       <div v-if="!negative">
 
-        <p>Aurreko egunean baino <span>
+        <p>{{ $t('headers.difference.aurreko') }} <span>
           <number
           ref="number2"
           :to="diff"
           :duration="3"
           easing="Power1.easeOut"/>
-        </span> gehiago
+        </span> {{ $t('headers.difference.gehiago') }}
           <v-icon color="success" v-if="inverse">mdi-menu-up</v-icon>
           <v-icon color="error" v-else>mdi-menu-up</v-icon>
         </p>
@@ -69,13 +69,13 @@
 
       <div v-else>
 
-        <p>Aurreko egunean baino <span>
+        <p>{{ $t('headers.difference.aurreko') }} <span>
           <number
           ref="number2"
           :to="diff"
           :duration="3"
           easing="Power1.easeOut"/>
-        </span> gutxiago
+        </span> {{ $t('headers.difference.gutxiago') }}
         <v-icon color="error" v-if="inverse == true">mdi-menu-up</v-icon>
         <v-icon color="success" v-else>mdi-menu-down</v-icon>
       </p>

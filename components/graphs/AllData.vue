@@ -157,7 +157,17 @@
       this.series[1].data = this.graphData.series[1].data.reverse()
       this.series[2].data = this.graphData.series[2].data.reverse()
       this.series[3].data = this.graphData.series[3].data.reverse()
+      this.series[0].name = this.$t('sections.egunezGraph.positiboak')
+      this.series[1].name = this.$t('sections.egunezGraph.ospitaleratuak')
+      this.series[2].name = this.$t('sections.egunezGraph.hildakoak')
+      this.series[3].name = this.$t('sections.egunezGraph.altak')
       this.options.xaxis.categories = this.graphData.options.xaxis.categories.reverse()
+
+      //yaxis
+      this.options.yaxis[0].seriesName = this.$t('sections.egunezGraph.positiboak')
+      this.options.yaxis[1].seriesName = this.$t('sections.egunezGraph.positiboak')
+      this.options.yaxis[2].seriesName = this.$t('sections.egunezGraph.hildakoak')
+      this.options.yaxis[3].seriesName = this.$t('sections.egunezGraph.hildakoak')
     }
   }
 }

@@ -11,7 +11,7 @@
     <v-dialog v-model="singleDialog" scrollable max-width="700px">
       <v-card>
         <div v-if="townData.length">
-          <v-card-title class="small-title" v-if="townData.length">Positiboen bilakaera {{ townData[0].res.geoMunicipality.nameByLang.BASQUE}}(e)n</v-card-title>
+          <v-card-title class="small-title" v-if="townData.length">{{ $t('dialogs.bilakaera', {place: townData[0].res.geoMunicipality.nameByLang.BASQUE }) }}</v-card-title>
           <single-town-chart :graph="graphData"></single-town-chart>
         </div>
       </v-card>
@@ -21,15 +21,15 @@
     <!-- TOTAL LIST DIALOG -->
     <v-dialog v-model="totalListDialog" scrollable max-width="400px">
       <v-card>
-        <v-card-title class="small-title">Positiboen zerrenda ({{lastUpdate}})</strong></v-card-title>
+        <v-card-title class="small-title">{{ $t('dialogs.positiboenZerrenda') }} ({{lastUpdate}})</strong></v-card-title>
         <v-divider></v-divider>
 
         <v-simple-table dense>
           <template v-slot:default>
             <thead>
               <tr>
-                <th class="text-left">Herria</th>
-                <th class="text-left">Positiboak</th>
+                <th class="text-left">{{ $t('dialogs.herria') }}</th>
+                <th class="text-left">{{ $t('dialogs.positiboak') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -73,9 +73,8 @@
                     color="transparent"
                     class="header">
 
-                    <v-card-subtitle class="header-title pa-3">Herrikako bilaketa</v-card-subtitle>
-                    <v-card-subtitle class="header-subtitle pa-0">Herri bakoitzean eman diren positiboak. Herriaren gainean klikatu dezakezu bilakaera osoa ikusteko.
-                    Herri bat agertzen ez bada, positiborik ez duelako da.</v-card-subtitle>
+                    <v-card-subtitle class="header-title pa-3">{{ $t('sections.herrika') }}</v-card-subtitle>
+                    <v-card-subtitle class="header-subtitle pa-0">{{ $t('sections.herrikaText') }}</v-card-subtitle>
                     </v-card>
                 </v-col>
                 <v-col
@@ -84,7 +83,7 @@
 
                   <v-text-field
                     v-model="searchInput"
-                    label="Bilaketa egin..."
+                    :label="$t('sections.formText')"
                     solo
                     color="white"
                     height="52"></v-text-field>
@@ -95,7 +94,7 @@
                   cols="4"
                   md="3">
 
-                  <v-btn color="primary" block x-large @click="_search()">Bilatu</v-btn>
+                  <v-btn color="primary" block x-large @click="_search()">{{ $t('sections.formSubmit') }}</v-btn>
 
                 </v-col>
 
@@ -104,10 +103,12 @@
           <v-row>
 
             <v-col cols="12" class="m-0 py-0">
-              <small v-if="towns" class="towns__notes">{{ towns.notes.BASQUE }}</small>
+              <small v-if="towns" class="towns__notes">
+                {{ $t('sections.herriakNotes') }}
+              </small>
             </v-col>
             <v-col cols="12" class="list-container ma-0 py-0">
-              <p class="towns__list-dialog">Herrien zerrenda oso ikusteko <span @click="totalListDialog = true">egin klik hemen</span></p>
+              <p class="towns__list-dialog">{{ $t('sections.formLinkText') }} <span @click="totalListDialog = true">{{ $t('sections.formLink') }}</span></p>
             </v-col>
 
           </v-row>
