@@ -161,6 +161,8 @@
       this.series[1].name = this.$t('sections.egunezGraph.ospitaleratuak')
       this.series[2].name = this.$t('sections.egunezGraph.hildakoak')
       this.series[3].name = this.$t('sections.egunezGraph.altak')
+      this.options.yaxis[0].title.text = this.$t('sections.egunezGraph.yaxis1')
+      this.options.yaxis[2].title.text = this.$t('sections.egunezGraph.yaxis2')
       this.options.xaxis.categories = this.graphData.options.xaxis.categories.reverse()
 
       //yaxis

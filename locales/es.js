@@ -1,7 +1,7 @@
 export default {
   seo: {
     title: 'Covid-19 eus',
-    desc: 'Sitio web que muestra todos los datos sobre el Covid-19 en EAE'
+    desc: 'Sitio web que muestra todos los datos sobre el Covid-19 en la CAV'
   },
   headers: {
     analisiak: 'Análisis en total',
@@ -29,7 +29,7 @@ export default {
   sections: {
     //Herrika
     herrika: 'Busqueda por localidad',
-    herrikaText: 'Los positivos que se han dado en cada municipio. Además puedes ver la evolución de los positivos del municipio seleccionado. Si no obtienes resultados, el municipio no tiene ningún caso registrado.',
+    herrikaText: 'Positivos que se han dado en cada municipio. Además puedes ver la evolución de los positivos del municipio seleccionado. Si no obtienes resultados, es porque el municipio no tiene ningún caso registrado.',
     formText: 'Escribe la localidad',
     formSubmit: 'Buscar',
     formLinkText: 'Para ver el listado completo',
@@ -42,11 +42,11 @@ export default {
 
     //Lurraldeka
     lurraldeka: 'Por provincias',
-    lurraldekaText: 'Evolución que se ha dado en cada una de la provincias. Por una parte los positivos día a día. Por otra parte la evolución de los positivos por cada 10.000 habitantes.',
+    lurraldekaText: 'Evolución de los positivos en cada una de la provincias. Por un lado, los positivos día a día. Por otro, la evolución de los positivos por cada 10.000 habitantes.',
 
     //OSPITALERATUAK
     ospitaleratuak: 'Hospitalizados/as',
-    ospitaleratuakText: 'Evolución de los/as hospitalizadas tanto en planta como en la UCI.',
+    ospitaleratuakText: 'Evolución de los/as hospitalizados/as tanto en planta como en la UCI.',
     ospitaleratuakGraph: {
       plantan: 'Planta',
       ucian: 'UCI',
@@ -54,7 +54,7 @@ export default {
 
     //Adinaren arabera
     adinarenArabera: 'Por edad',
-    adinarenAraberaText: 'Impacto del virus por edades.',
+    adinarenAraberaText: 'Gráfico que muestra el impacto del virus por edad.',
     adinaGraph: {
       positiboak: 'Positivos',
       hildakoak: 'Fallecidos/as',
@@ -64,20 +64,22 @@ export default {
 
     //Egunez-eguneako (allGraphs)
     egunezEgunekoa: 'Evolución día a día',
-    egunezEgunekoaText: 'Datos obtenidos día por día en EAE. por una parte los/as enfermos/as y hospitalizados/as. Por otra parte evolución de fallecidos/as y curados/as.',
+    egunezEgunekoaText: 'Datos obtenidos día a día en la CAV. Por una parte, los/as enfermos/as y hospitalizados/as. Por otra, evolución entre fallecidos/as y curados/as.',
     egunezGraph: {
       positiboak: 'Positivos',
       hildakoak: 'Fallecidos',
       ospitaleratuak: 'Hospitalizados/as',
-      altak: 'Altas'
+      altak: 'Altas',
+      yaxis1: 'Positivos y hospitalizados/as',
+      yaxis2: 'Fallecidos/as y altas'
     },
   },
   footer: {
     credits: 'Desarrollo @asiermusa | Datos Opendata Euskadi'
   },
   nav: {
-    mainText1: 'Esta aplicación está en versión BETA y ha sido desarrollada obteniendo datos de Opendata Euskadi. Los datos han sido obtenidos a partir del 19 de marzo.',
-    mainText2: 'Los datos se actualizarán a diarios sobre las 14:00 de la tarde.',
+    mainText1: 'Esta aplicación está en versión BETA y ha sido desarrollada con los datos de Opendata Euskadi. Éstos han sido obtenidos a partir del 19 de marzo.',
+    mainText2: 'Toda la información se actualiza a diario sobre las 14:00 horas.',
     code: 'Código',
     codeLink: 'en github'
   },

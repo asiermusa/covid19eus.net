@@ -619,11 +619,10 @@ $blue: #092245;
 $yellow: #f7cc5c;
 $turkish: #138484;
 
-
 // cards styles override
 .card-title {
   font-size: 16px !important;
-  text-transform:uppercase;
+  text-transform:uppercase !important;
   letter-spacing: 1px !important;
   font-weight: 300 !important;
 }
@@ -656,15 +655,15 @@ $turkish: #138484;
 // main headers
 .header {
   &-title {
-    font-size: 22px;
-    line-height: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 300;
+    font-size: 22px !important;
+    line-height: 30px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-weight: 300 !important;
     text-align: center;
   }
   &-subtitle {
-    font-size: 14px;
+    font-size: 14px !important;
     text-align: center;
   }
   &-notes {

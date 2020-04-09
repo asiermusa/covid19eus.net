@@ -123,7 +123,7 @@
             data: []
           }],
           options: {
-            colors: ["#476db0", "#ddde9a", "#7b2f5d"],
+            colors: ["#65a5c0", "#ddde9a", "#7b2f5d"],
             labels: [],
             chart: {
               type: 'line',

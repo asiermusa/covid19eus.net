@@ -23,7 +23,7 @@
         <div class="py-2" style="color: #ababab;">
           <p class="text-left">
             <v-icon style="font-size: 20px">mdi-github</v-icon>
-            {{ $t('nav.code') }} <a href="https://github.com/asiermusa/covid19eus.net" style="font-weight: bold;">{{ $t('nav.codeLink') }}</a>
+            {{ $t('nav.code') }} <a href="https://github.com/asiermusa/covid19eus.net" target="_blank" style="font-weight: bold;">{{ $t('nav.codeLink') }}</a>
           </p>
           <p class="text-left">
             <v-icon style="font-size: 20px">mdi-email</v-icon> asiermusa@gmail.com

@@ -21,14 +21,14 @@ export default {
     }
   },
   dialogs: {
-    positiboenZerrenda: 'positiboen zerrenda',
+    positiboenZerrenda: 'Positiboen zerrenda',
     herria: 'Herria',
     positiboak: 'Positiboak',
     bilakaera: 'Positiboen bilakaera {place}(e)n'
   },
   sections: {
     //Herrika
-    herrika: 'Herrikoako bilaketa',
+    herrika: 'Herrikako bilaketa',
     herrikaText: 'Herri bakoitzean eman diren positiboak. Herriaren gainean klikatu dezakezu bilakaera osoa ikusteko. Herri bat agertzen ez bada, positiborik ez duelako da.',
     formText: 'Bilaketa egin',
     formSubmit: 'Bilatu',
@@ -42,7 +42,7 @@ export default {
 
     //Lurraldeka
     lurraldeka: 'Lurraldeka',
-    lurraldekaText: 'Lurralde bakoitzean eman diren positiboen bilakaera. Batetik egun bakoitzean eman diren positibo kopurua. Bestetik 10.000 biztanleko gaixo kopuruak egunez-egun izandako bilakaera.',
+    lurraldekaText: 'Lurralde bakoitzean eman diren positiboen bilakaera. Batetik, egun bakoitzean eman diren positibo kopurua. Bestetik, 10.000 biztanleko gaixo kopuruak egunez-egun izandako bilakaera.',
 
     //OSPITALERATUAK
     ospitaleratuak: 'Ospitaleratuak',
@@ -69,7 +69,9 @@ export default {
       positiboak: 'Positiboak',
       hildakoak: 'Hildakoak',
       ospitaleratuak: 'Ospitaleratuak',
-      altak: 'Altak'
+      altak: 'Altak',
+      yaxis1: 'Positiboak eta ospitaleratuak',
+      yaxis2: 'Hildakoak eta altak'
     },
   },
   footer: {
