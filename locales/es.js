@@ -6,7 +6,7 @@ export default {
   headers: {
     analisiak: 'Análisis en total',
     positiboak: 'De los cuales positivos',
-    ospitaleratuak: 'Hospitalazidos/as en total',
+    ospitaleratuak: 'Hospitalizados/as en total',
     altan: 'Altas',
     hildakoak: 'fallecidos/as',
     heriotzaTasa: 'Tasa de mortalidad',
@@ -67,7 +67,7 @@ export default {
     egunezEgunekoaText: 'Datos obtenidos día a día en la CAV. Por una parte, los/as enfermos/as y hospitalizados/as. Por otra, evolución entre fallecidos/as y curados/as.',
     egunezGraph: {
       positiboak: 'Positivos',
-      hildakoak: 'Fallecidos',
+      hildakoak: 'Fallecidos/as',
       ospitaleratuak: 'Hospitalizados/as',
       altak: 'Altas',
       yaxis1: 'Positivos y hospitalizados/as',
