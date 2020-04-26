@@ -5,7 +5,7 @@ export default {
   },
   headers: {
     analisiak: 'Analisiak guztira',
-    positiboak: 'Horietatik positiboak',
+    positiboak: 'Positiboak guztira',
     ospitaleratuak: 'Ospitaleratuak guztira',
     altan: 'Altan emandakoak',
     hildakoak: 'Hildakoak',
@@ -32,7 +32,7 @@ export default {
     herrikaText: 'Herri bakoitzean eman diren positiboak. Herriaren gainean klikatu dezakezu bilakaera osoa ikusteko. Herri bat agertzen ez bada, positiborik ez duelako da.',
     formText: 'Bilaketa egin',
     formSubmit: 'Bilatu',
-    formLinkText: 'Herrien zerrenda oso ikusteko',
+    formLinkText: 'Herrien zerrenda osoa ikusteko',
     formLink: 'egin klik hemen',
     positiboak: 'Positiboak',
 
@@ -42,7 +42,8 @@ export default {
 
     //Lurraldeka
     lurraldeka: 'Lurraldeka',
-    lurraldekaText: 'Lurralde bakoitzean eman diren positiboen bilakaera. Batetik, egun bakoitzean eman diren positibo kopurua. Bestetik, 10.000 biztanleko gaixo kopuruak egunez-egun izandako bilakaera.',
+    //lurraldekaText: 'Lurralde bakoitzean eman diren positiboen bilakaera. Batetik, egun bakoitzean eman diren positibo kopurua. Bestetik, 10.000 biztanleko gaixo kopuruak egunez-egun izandako bilakaera.',
+    lurraldekaText: 'Datuen jatorrian eman diren aldaketa batzuk direla eta, lurraldekako positiboen kopurua ez dugu eskura momentu honetan. Ahalik eta lasterren izango da informazio hau berriz eskuragarri.',
 
     //OSPITALERATUAK
     ospitaleratuak: 'Ospitaleratuak',

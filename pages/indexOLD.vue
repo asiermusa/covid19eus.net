@@ -16,10 +16,10 @@
           color="transparent">
 
           <!-- ANALISIAK -->
-          <!-- <v-card-title class="card-title justify-center my-3">{{ $t('headers.analisiak') }}</v-card-title>
+          <v-card-title class="card-title justify-center my-3">{{ $t('headers.analisiak') }}</v-card-title>
           <v-card-subtitle class="card-maindata justify-center" v-if="analisis">
             <difference :data1="analisis.total.totalCountEuskadi" :data2="totalRegion[0].totalCountEuskadi" type="positiboak"></difference>
-          </v-card-subtitle> -->
+          </v-card-subtitle>
           <!-- ANALISIAK -->
 
           <!-- HILDAKOAK -->
@@ -396,7 +396,7 @@ export default {
     },
     analisis(val){
       this.loader = false
-      //this._getRegions()
+      this._getRegions()
     },
 
     // Get the towns/city names from JSON
@@ -596,6 +596,8 @@ export default {
 
       var hildakoak = await this.$axios.$get('https://opendata.euskadi.eus/contenidos/ds_informes_estudios/covid_19_2020/opendata/aggregated/json/hildakoak-fallecidos.json')
       this.hildakoak = hildakoak.byDate
+
+      if(!hildakoak.byDate.total.length) this.$router.push({ name: 'errorPage' })
 
       var analisis = await this.$axios.$get('https://opendata.euskadi.eus/contenidos/ds_informes_estudios/covid_19_2020/opendata/aggregated/json/analisiak-analisis.json')
       this.analisis = analisis

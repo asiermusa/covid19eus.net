@@ -5,7 +5,7 @@ export default {
   },
   headers: {
     analisiak: 'Análisis en total',
-    positiboak: 'De los cuales positivos',
+    positiboak: 'Positivos en total',
     ospitaleratuak: 'Hospitalizados/as en total',
     altan: 'Altas',
     hildakoak: 'fallecidos/as',
@@ -42,7 +42,8 @@ export default {
 
     //Lurraldeka
     lurraldeka: 'Por provincias',
-    lurraldekaText: 'Evolución de los positivos en cada una de la provincias. Por un lado, los positivos día a día. Por otro, la evolución de los positivos por cada 10.000 habitantes.',
+    //lurraldekaText: 'Evolución de los positivos en cada una de la provincias. Por un lado, los positivos día a día. Por otro, la evolución de los positivos por cada 10.000 habitantes.',
+    lurraldekaText: 'Debido a un cambio en el origen de los datos, esta información no está disponible por el momento.',
 
     //OSPITALERATUAK
     ospitaleratuak: 'Hospitalizados/as',
