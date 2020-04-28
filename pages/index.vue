@@ -6,7 +6,7 @@
     </v-overlay>
 
     <!-- INFO ABOUT TESTS -->
-    <v-dialog v-model="testsInfo" scrollable max-width="700px">
+    <v-dialog v-model="testsInfo" max-width="600px">
       <info-test></info-test>
     </v-dialog>
     <!-- INFO ABOUT TESTS -->
@@ -74,7 +74,7 @@
             <difference :data1="hildakoak[0].total.positiveTotalCount" :data2="hildakoak[1].total.positiveTotalCount" type="hildakoak"></difference>
           </v-card-subtitle>
           <!-- POSITIBOAK -->
-          
+
           <!-- OSPITALERATUAK -->
           <v-card-title class="card-title justify-center my-3">{{ $t('headers.ospitaleratuak') }}</v-card-title>
           <v-card-subtitle class="card-maindata justify-center" v-if="ospitaleratuak">
