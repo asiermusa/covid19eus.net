@@ -69,7 +69,7 @@
             labels: {
               style: {
                  colors: '#ccc',
-                fontSize: '11px',
+                fontSize: '9px',
               }
             }
           },

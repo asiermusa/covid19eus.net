@@ -33,7 +33,7 @@
         }],
         options: {
 
-          colors: ["#28426f", "#ddde9a"],
+          colors: ["#092245", "#ddde9a"], //092245 28426f
           stroke: {
             width: [1, 1]
           },
@@ -50,7 +50,7 @@
           plotOptions: {
             bar: {
               horizontal: false,
-              columnWidth: '40%',
+              columnWidth: '70%',
             },
           },
           legend: {
@@ -88,7 +88,7 @@
             labels: {
               style: {
                  colors: '#c5dbeb',
-                fontSize: '11px',
+                fontSize: '9px',
               }
             }
           },

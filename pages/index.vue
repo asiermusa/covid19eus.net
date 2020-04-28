@@ -5,6 +5,12 @@
       <v-progress-circular color="white" indeterminate size="64"></v-progress-circular>
     </v-overlay>
 
+    <!-- INFO ABOUT TESTS -->
+    <v-dialog v-model="testsInfo" scrollable max-width="700px">
+      <info-test></info-test>
+    </v-dialog>
+    <!-- INFO ABOUT TESTS -->
+
     <v-container>
       <v-row>
         <v-col cols="12" md="4">
@@ -15,19 +21,26 @@
           raised
           color="transparent">
 
-          <!-- ANALISIAK -->
-          <!-- <v-card-title class="card-title justify-center my-3">{{ $t('headers.analisiak') }}</v-card-title>
-          <v-card-subtitle class="card-maindata justify-center" v-if="analisis">
-            <difference :data1="analisis.total.totalCountEuskadi" :data2="totalRegion[0].totalCountEuskadi" type="positiboak"></difference>
-          </v-card-subtitle> -->
-          <!-- ANALISIAK -->
-
-          <!-- HILDAKOAK -->
-          <v-card-title class="card-title justify-center my-3">{{ $t('headers.positiboak') }}</v-card-title>
-          <v-card-subtitle class="card-maindata justify-center" v-if="hildakoak">
-            <difference :data1="hildakoak[0].total.positiveTotalCount" :data2="hildakoak[1].total.positiveTotalCount"></difference>
+          <!-- PCR TESTAK -->
+          <v-card-title class="card-title justify-center my-3">{{ $t('headers.analisiak') }}</v-card-title>
+          <v-card-subtitle class="card-maindata justify-center" v-if="tests">
+            <difference :data1="tests[0].pcrTestCountEuskadi" :data2="tests[1].pcrTestCountEuskadi"></difference>
           </v-card-subtitle>
-          <!-- HILDAKOAK -->
+          <!-- PCR TESTAK -->
+
+          <!-- TEST AZKARRAK -->
+          <v-card-title class="card-title justify-center my-3">{{ $t('headers.analisiakQuick') }}</v-card-title>
+          <v-card-subtitle class="card-maindata justify-center" v-if="tests">
+            <difference :data1="tests[0].quickTestCountEuskadi" :data2="tests[1].quickTestCountEuskadi"></difference>
+          </v-card-subtitle>
+          <!-- TEST AZKARRAK -->
+
+          <v-card-title class="card-title justify-center my-0">
+
+          <v-btn class="ma-0" text small color="white" @click="testsInfo = true">
+            <v-icon left>mdi-information-outline</v-icon> {{ $t('headers.analisiakInfo') }}
+          </v-btn>
+          </v-card-title>
 
         </v-card>
 
@@ -39,6 +52,29 @@
           elevation='0'
           color="transparent">
 
+          <!-- POSITIBOAK -->
+          <v-card-subtitle class="card-maindata justify-center my-3" v-if="hildakoak">
+            <v-chip
+              class="ma-2 my-0"
+              color="secondary"
+              text-color="white"
+              large>
+
+              {{ $t('headers.positiboak') }}
+              <span style="margin-left: 10px;">
+                <number
+                  ref="number2"
+                  :to="hildakoak[0].total.positiveTotalCount"
+                  :duration="3"
+                  easing="Power1.easeOut"/>
+              </span>
+
+            </v-chip>
+
+            <difference :data1="hildakoak[0].total.positiveTotalCount" :data2="hildakoak[1].total.positiveTotalCount" type="hildakoak"></difference>
+          </v-card-subtitle>
+          <!-- POSITIBOAK -->
+          
           <!-- OSPITALERATUAK -->
           <v-card-title class="card-title justify-center my-3">{{ $t('headers.ospitaleratuak') }}</v-card-title>
           <v-card-subtitle class="card-maindata justify-center" v-if="ospitaleratuak">
@@ -247,6 +283,7 @@ import Regions from '~/components/graphs/Regions'
 import Hospital from '~/components/graphs/Hospital'
 import ByYears from '~/components/graphs/ByYears'
 import AllData from '~/components/graphs/AllData'
+import InfoTest from '~/components/InfoTest.vue'
 
 export default {
   components: {
@@ -255,7 +292,8 @@ export default {
     Regions,
     Hospital,
     ByYears,
-    AllData
+    AllData,
+    InfoTest
   },
   head() {
     return {
@@ -282,6 +320,8 @@ export default {
       hildakoak: null,
       analisis: null,
       analisisReverse: [],
+      tests: null,
+      testsInfo: false,
       herriDatuak: [],
       ospitaleratuakCount: [],
       altakCount: 0,
@@ -395,8 +435,10 @@ export default {
       this._getAllChart()
     },
     analisis(val){
+      this._getRegions()
+    },
+    tests(val){
       this.loader = false
-      //this._getRegions()
     },
 
     // Get the towns/city names from JSON
@@ -410,21 +452,18 @@ export default {
               return townsArray.filter((res3, index) => {
 
                 let oid = 0
-                // sometimes oid.id is empty...
-                if(res2.geoMunicipality.oid.id){
-                  oid = res2.geoMunicipality.oid.id
-                }else{
-                  oid = res2.geoMunicipality.oid
-                }
 
-                if(oid == res3.territorycode.slice(0,2) + '' + res3.municipalitycode.slice(0,3)){
+                if(res2.Codigomunicipio)
+                  oid = res2.Codigomunicipio
+
+                if(oid == res3.Codigoprovincia.slice(0,2) + '' + res3.Codigomunicipio.slice(0,3)){
                   // change the name of de city
 
                   //DONOSTIA
                   if(oid == '20069'){
                     res2.geoMunicipality.nameByLang.BASQUE = 'Donostia'
                   }else{
-                    res2.geoMunicipality.nameByLang.BASQUE = res3.documentName
+                    res2.geoMunicipality.nameByLang.BASQUE = res3.Nombre
                   }
                 }
 
@@ -532,7 +571,8 @@ export default {
         })
 
         this.totalRegion.reverse().filter((e, index) => {
-          if(index <= 9){
+          // here choose the days to show in the graph
+          if(index < 28){
             biTotal.push(e.prob.bi)
             arTotal.push(e.prob.ar)
             giTotal.push(e.prob.gi)
@@ -542,6 +582,7 @@ export default {
             arTotal10000.push(parseFloat(10000*e.prob.ar/325739).toFixed(2))
             giTotal10000.push(parseFloat(10000*e.prob.gi/710281).toFixed(2))
           }
+
         })
 
         this.regions1.series[0].data = biTotal
@@ -605,6 +646,10 @@ export default {
       this.herriakComputed = herriakComputed.slice(13,-2)
       this.herriakComputed = JSON.parse(this.herriakComputed)
 
+      var tests = await this.$axios.$get('https://opendata.euskadi.eus/contenidos/ds_informes_estudios/covid_19_2020/opendata/aggregated/json/testak-tests.json')
+      this.tests = tests.byDate.reverse()
+
+      console.log('tests', this.tests)
       this.lastUpdate = this._customDate(this.herriak.lastUpdateDate)
       this.snackbar = true
     }

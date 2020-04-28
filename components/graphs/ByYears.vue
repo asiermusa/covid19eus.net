@@ -31,8 +31,7 @@
           data: []
         }],
         options: {
-
-          colors: ["#28426f", "#b1262d"],
+          colors: ["#092245", "#ff5252"],
           stroke: {
             width: [1, 1]
           },
@@ -44,7 +43,8 @@
             enabled: false
           },
           stroke: {
-            curve: 'smooth'
+            curve: 'smooth',
+            width: 3
           },
           legend: {
             labels: {

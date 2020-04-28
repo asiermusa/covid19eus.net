@@ -4,8 +4,10 @@ export default {
     desc: 'Sitio web que muestra todos los datos sobre el Covid-19 en la CAV'
   },
   headers: {
-    analisiak: 'Análisis en total',
-    positiboak: 'Positivos en total',
+    analisiak: 'Test PCR en total',
+    analisiakQuick: 'Test rápidos en total',
+    analisiakInfo: 'Diferencias entre tests',
+    positiboak: 'Positivos',
     ospitaleratuak: 'Hospitalizados/as en total',
     altan: 'Altas',
     hildakoak: 'fallecidos/as',
@@ -42,8 +44,7 @@ export default {
 
     //Lurraldeka
     lurraldeka: 'Por provincias',
-    //lurraldekaText: 'Evolución de los positivos en cada una de la provincias. Por un lado, los positivos día a día. Por otro, la evolución de los positivos por cada 10.000 habitantes.',
-    lurraldekaText: 'Debido a un cambio en el origen de los datos, esta información no está disponible por el momento.',
+    lurraldekaText: 'Evolución de los positivos en cada una de la provincias. Por un lado, los positivos día a día. Por otro, la evolución de los positivos por cada 10.000 habitantes. Se muestran los datos de los últimos 30 días para una mejor legibilidad de los gráficos.',
 
     //OSPITALERATUAK
     ospitaleratuak: 'Hospitalizados/as',
@@ -79,7 +80,7 @@ export default {
     credits: 'Desarrollo @asiermusa | Datos Opendata Euskadi'
   },
   nav: {
-    mainText1: 'Esta aplicación está en versión BETA y ha sido desarrollada con los datos de Opendata Euskadi. Éstos han sido obtenidos a partir del 19 de marzo.',
+    mainText1: 'Esta aplicación ha sido desarrollada con los datos de Opendata Euskadi. La mayoría de los datos han sido obtenidos a partir del 19 de marzo.',
     mainText2: 'Toda la información se actualiza a diario sobre las 14:00 horas.',
     code: 'Código',
     codeLink: 'en github'

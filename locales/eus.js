@@ -4,8 +4,10 @@ export default {
     desc: 'EAEan Covid-19ari buruzko datuak biltzen dituen ataria'
   },
   headers: {
-    analisiak: 'Analisiak guztira',
-    positiboak: 'Positiboak guztira',
+    analisiak: 'PCR testak guztira',
+    analisiakQuick: 'Test azkarrak guztira',
+    analisiakInfo: 'Testen arteko ezberdintasuna',
+    positiboak: 'Positiboak',
     ospitaleratuak: 'Ospitaleratuak guztira',
     altan: 'Altan emandakoak',
     hildakoak: 'Hildakoak',
@@ -42,8 +44,7 @@ export default {
 
     //Lurraldeka
     lurraldeka: 'Lurraldeka',
-    //lurraldekaText: 'Lurralde bakoitzean eman diren positiboen bilakaera. Batetik, egun bakoitzean eman diren positibo kopurua. Bestetik, 10.000 biztanleko gaixo kopuruak egunez-egun izandako bilakaera.',
-    lurraldekaText: 'Datuen jatorrian eman diren aldaketa batzuk direla eta, lurraldekako positiboen kopurua ez dugu eskura momentu honetan. Ahalik eta lasterren izango da informazio hau berriz eskuragarri.',
+    lurraldekaText: 'Lurralde bakoitzean eman diren positiboen bilakaera. Batetik, egun bakoitzean eman diren positibo kopurua. Bestetik, 10.000 biztanleko gaixo kopuruak egunez-egun izandako bilakaera. Azken 30 egunetako datuak erakusten dira, grafikoa ulergarria egiteko.',
 
     //OSPITALERATUAK
     ospitaleratuak: 'Ospitaleratuak',
@@ -79,7 +80,7 @@ export default {
     credits: 'Garapena @asiermusa | Datuak Opendata Euskadi'
   },
   nav: {
-    mainText1: 'Aplikazio hau BETA bertsioan dago eta Opendata euskadiko webguneko datuak jasota egin da. Datu guztiak martxoaren 19az geroztik jaso dira.',
+    mainText1: 'Aplikazio hau Opendata euskadi webguneko datuak jasota egin da. Datu gehienak martxoaren 19az geroztik jaso dira.',
     mainText2: 'Egunero 14:00ak aldera modu automatikoan eguneratuko dira datuak.',
     code: 'Kodea',
     codeLink: 'githuben eskuragarri'

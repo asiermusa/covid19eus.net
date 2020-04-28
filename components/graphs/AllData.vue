@@ -45,7 +45,7 @@
         }],
         options: {
 
-          colors: ["#28426f", "#ddde9a", "#b1262d", '#3c9052'],
+          colors: ["#092245", "#ddde9a", "#ff5252", '#3c9052'],
           chart: {
             height: 400,
             type: 'line',
@@ -54,12 +54,12 @@
           plotOptions: {
             bar: {
               horizontal: false,
-              columnWidth: '40%',
+              columnWidth: '70%',
             },
           },
           stroke: {
-            width: [0,0,4,4],
-            //curve: 'smooth',
+            width: [0,0,3,3],
+            curve: 'smooth',
           },
           legend: {
             labels: {
@@ -98,8 +98,8 @@
             categories: [],
             labels: {
               style: {
-                 colors: '#c5dbeb',
-                fontSize: '11px',
+                colors: '#c5dbeb',
+                fontSize: '8px',
               }
             }
           },
@@ -135,7 +135,7 @@
             },
             labels: {
               style: {
-                 colors: '#c5dbeb',
+                colors: '#c5dbeb',
                 fontSize: '10px',
               }
             },

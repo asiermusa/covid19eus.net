@@ -41,7 +41,7 @@
             data: []
           }],
           options: {
-            colors: ["#34538a", "#ddde9a", "#7b2f5d"],
+            colors: ["#092245", "#ddde9a", "#ff5252"],
             labels: [],
             chart: {
               type: 'bar',
@@ -49,7 +49,7 @@
             plotOptions: {
               bar: {
                 horizontal: false,
-                columnWidth: '70%',
+                columnWidth: '90%',
               },
             },
             dataLabels: {
@@ -93,7 +93,7 @@
               labels: {
                 style: {
                   colors: '#c5dbeb',
-                  fontSize: '11px',
+                  fontSize: '9px',
                 }
               }
             },
@@ -123,7 +123,7 @@
             data: []
           }],
           options: {
-            colors: ["#65a5c0", "#ddde9a", "#7b2f5d"],
+            colors: ["#092245", "#ddde9a", "#ff5252"],
             labels: [],
             chart: {
               type: 'line',
@@ -170,7 +170,7 @@
               labels: {
                 style: {
                   colors: '#c5dbeb',
-                  fontSize: '11px',
+                  fontSize: '9px',
                 }
               }
             },
