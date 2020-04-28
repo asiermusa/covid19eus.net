@@ -445,34 +445,33 @@ export default {
     herriakComputed(val){
       //
       var townsArray = this.herriakComputed
+
       this.herriak.byDate.filter((res, index) => {
         if(index == 0){
           return res.items.map(res2 => {
             if(res2.positiveCount > 0){
               return townsArray.filter((res3, index) => {
-
                 let oid = 0
-
-                if(res2.Codigomunicipio)
-                  oid = res2.Codigomunicipio
-
+                // sometimes oid.id is empty...
+                if(res2.geoMunicipality.oid.id){
+                  oid = res2.geoMunicipality.oid.id
+                }else{
+                  oid = res2.geoMunicipality.oid
+                }
                 if(oid == res3.Codigoprovincia.slice(0,2) + '' + res3.Codigomunicipio.slice(0,3)){
                   // change the name of de city
-
-                  //DONOSTIA
                   if(oid == '20069'){
                     res2.geoMunicipality.nameByLang.BASQUE = 'Donostia'
                   }else{
                     res2.geoMunicipality.nameByLang.BASQUE = res3.Nombre
                   }
                 }
-
               })
             }
           })
         }
       })
-
+      console.log('herriakaa', this.herriak)
     }
   },
   methods: {
@@ -649,7 +648,6 @@ export default {
       var tests = await this.$axios.$get('https://opendata.euskadi.eus/contenidos/ds_informes_estudios/covid_19_2020/opendata/aggregated/json/testak-tests.json')
       this.tests = tests.byDate.reverse()
 
-      console.log('tests', this.tests)
       this.lastUpdate = this._customDate(this.herriak.lastUpdateDate)
       this.snackbar = true
     }
