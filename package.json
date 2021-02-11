@@ -14,7 +14,7 @@
     "@nuxtjs/axios": "^5.9.7",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "apexcharts": "^3.17.1",
+    "apexcharts": "^3.24.0",
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "cookieparser": "^0.1.0",
