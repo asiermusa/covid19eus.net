@@ -16,7 +16,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "apexcharts": "^3.17.1",
     "axios": "^0.19.2",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "cookieparser": "^0.1.0",
     "express": "^4.17.1",
     "js-cookie": "^2.2.1",
